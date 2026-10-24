@@ -1,0 +1,23 @@
+{
+  "app.py": "c8012bb9361eeace1c30cf3f8da6937acd972fbdeb75889cc0ab3e5bc230ea5b",
+  "requirements.txt": "01f84cddb83a99f86fc8dd61ff8d1fe55e122cc29c17637e3fe9aef8f06e0156",
+  ".streamlit/config.toml": "4b221b0539c66bdf718d0416ec0708c5b5930aeb376c7547265a40b4fe8f962c",
+  "src/__init__.py": "56051e6860ac15f8d292befdc9011628c1cd57f90ef18212e3bf62b8c8f7389a",
+  "src/v5/__init__.py": "8a5957c2a6781dd292d63f7e3ae27895c0b06da4a28602944eea1b6e3a50beb3",
+  "src/v5/config.py": "29a0697758775cea60cfcf43eabbaefc52ebfe145e8a65a5b03f8f19b382a5f7",
+  "src/v5/economics.py": "c1996845e01ead9dfc9c9bdc96786f22f33a34469bfdb4f6a52ea80668833666",
+  "src/v5/engine.py": "a9659dee710b491f519f1ca7bc3ed52794dc2844e20880e33ff70a9ac07a6d40",
+  "src/v5/errors.py": "afabd411b1e45c2b3729c32a4cca4ff29c1e4f176f2b3d94fe62d0cc2857c2d5",
+  "src/v5/hco.py": "44fe3d5444cb995eaac99af49b56a86c50725e11d11d191cfa674e8dedd24a6d",
+  "src/v5/vnls.py": "9b4255db0b60d8270e2610e21e9ab829a180f6f49695c175a3873b80509b0bdf",
+  "src/v5_ui/__init__.py": "9958afa30037503bf0ff794093b4f09d9b6179d3f50ea4bcd2e2d1a708bff259",
+  "src/v5_ui/analytics.py": "6066c2ca8268f25e01192ae1f465ec2bb7a279c0b97c8334da489681207134a0",
+  "src/v5_ui/dashboard.py": "b6c6a5af7ebcf4d3d9ff6e2488862b2f1e7b5ca9d6b3f00645c2085e445b4c72",
+  "src/v5_ui/presentation.py": "5fd551110cdfc97a4d5ebf71b98a578e33a7884cb41e9cac05d81f0a941a6c56",
+  "src/v5_ui/scenarios.py": "f603c3dd5f692ebd6cb9f95b1d27a91b23ec5cec46438344a10c4c42c9ea3deb",
+  "outputs/step5_v5_economic_lookup.csv": "41113b469af0c100cdef927e0f4f9c07de27ecac8761dd3b32c6d5121d30fa3c",
+  "outputs/step5_v5_family_index.csv": "33006757008a37027de588b9bf3805312a9e0f18385a71b813aab40500f5aa2a",
+  "outputs/step5_v5_metadata.json": "d84d634090f6991eb808275976944bb32a8ac8abc8c0415d1f24c4ee30d08a0e",
+  "README.md": "6acab5c7c66207cb89789616471049693f4eece4bdf8bd117969f9fd03d19b35",
+  ".gitignore": "25992f73d30681801762d1f73f37fb2b02ef9f94855dba1e4c6f176a8dcbba0e"
+}

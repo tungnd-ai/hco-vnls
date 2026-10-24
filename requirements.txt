@@ -1,0 +1,6 @@
+streamlit==1.58.0
+numpy==2.2.6
+pandas==2.3.3
+altair==6.2.1
+# Khóa middleware máy chủ đã kiểm tra với Streamlit 1.58; bản 1.9 gây lỗi phản hồi HTTP.
+starlette==1.2.1

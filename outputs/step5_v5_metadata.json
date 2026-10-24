@@ -1,0 +1,94 @@
+{
+  "step": 5,
+  "version": "V5",
+  "store": 44,
+  "planning_horizon_days": 7,
+  "forecast_start": "2017-08-16",
+  "forecast_end": "2017-08-22",
+  "promotion_levels": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "number_of_families": 15,
+  "family_order": [
+    "BEVERAGES",
+    "BREAD/BAKERY",
+    "CLEANING",
+    "DAIRY",
+    "DELI",
+    "EGGS",
+    "FROZEN FOODS",
+    "GROCERY I",
+    "LIQUOR,WINE,BEER",
+    "MEATS",
+    "PERSONAL CARE",
+    "POULTRY",
+    "PREPARED FOODS",
+    "PRODUCE",
+    "SEAFOOD"
+  ],
+  "margin_rate": 0.2,
+  "promotion_cost_min": 50.0,
+  "promotion_cost_max": 500.0,
+  "q_min": 1,
+  "q_max": 201,
+  "budget": 768.0,
+  "P_scale": 14911.037776894605,
+  "penalty_lambda": 19.415413771998185,
+  "economic_unit": "USD tham chiếu/mô phỏng, không phải lợi nhuận kế toán thực Store 44",
+  "q_definition": "Giá trị onpromotion đại diện mỗi ngày, cố định trong từng ngày của kịch bản bảy ngày; không phải số SKU duy nhất của cả kỳ",
+  "method": "Giá trung vị ba quan sát được chốt; biên gộp 20%; chi phí tuyến tính theo q; B bằng chi phí toàn mức 1; phạt mềm P_scale/B",
+  "formulas": {
+    "price": "median(P1,P2,P3)",
+    "unit_margin": "price*0.20",
+    "promotion_cost": "0 nếu p=0; còn lại 50+(500-50)*(q-q_min)/(q_max-q_min)",
+    "gross_incremental_margin": "unit_margin*uplift",
+    "incremental_profit": "gross_incremental_margin-promotion_cost",
+    "budget": "sum_i PromotionCost_i(1)",
+    "P_scale": "sum_i max_p IncrementalProfit_i(p)",
+    "violation": "max(0,total_cost-budget)",
+    "penalty_lambda": "P_scale/budget",
+    "fitness": "profit-penalty_lambda*budget_violation",
+    "feasibility": "total_cost<=budget"
+  },
+  "source_step4_filenames": [
+    "outputs\\step4_D_HAT_7d.csv",
+    "outputs\\step4_UPLIFT_7d.csv",
+    "outputs\\step4_promotion_level_mapping.csv",
+    "outputs\\step4_metadata.json"
+  ],
+  "source_step4_notebook": "04_catboost_promotion_simulation.ipynb",
+  "supervisor_guide": "..\\Huong_dan_de_tai_CatBoost_HCO_VNLS.docx",
+  "source_sha256": {
+    "outputs\\step4_D_HAT_7d.csv": "f49f2041c47493550acbd69080e8c3cb8ac965c587901de80d76bdaeda4a39ba",
+    "outputs\\step4_UPLIFT_7d.csv": "adf3bfa3bbd42ec8500e8b330ef627c7c5efe5b8af5665f5ad8baa34967eabc4",
+    "outputs\\step4_promotion_level_mapping.csv": "86881568413d4681305a15716e11f959f7d56666d482e029cc1254b9f82e5ef2",
+    "outputs\\step4_metadata.json": "b34155e6fcec7a139ac920eb5eed93012059ceeb01eca84f8fb2ebbabea3abbf",
+    "04_catboost_promotion_simulation.ipynb": "f8f9e57c9057a4abd56c611b44b3acfa1e7d58686a12fbaec1d143e3c0a782cb",
+    "..\\Huong_dan_de_tai_CatBoost_HCO_VNLS.docx": "158bc21ce8d6c5a46e3934350a87576c4653e207c76d2b6151ee9e451e209361"
+  },
+  "environment": {
+    "Python": "3.11.9",
+    "NumPy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "final_solution_requirement": "best_feasible_solution",
+  "price_provenance": "Ba quan sát mỗi nhóm là bảng đầu vào do người dùng chốt; không xác nhận đối sánh từng giá với từng tài liệu.",
+  "limitations": [
+    "Giá tham khảo có quy cách kg/gói/chai khác nhau; giả định đại diện đơn vị nhóm chưa kiểm định SKU",
+    "Có nguồn giá năm 2018 sau kỳ dự báo 2017; đây là mô phỏng hồi cứu",
+    "Chưa truy xuất được PDF INEC 01/2017 và UTN; không gán các số vào nguồn chưa đọc",
+    "Uplift dự báo không chứng minh nhân quả; phạt mềm không bảo đảm mọi nghiệm vi phạm xếp sau mọi nghiệm khả thi",
+    "Step 6–8 và ứng dụng cũ vẫn theo phương pháp cũ, chưa tương thích V5"
+  ],
+  "validation_checks_pass": true,
+  "output_files": [
+    "step5_v5_price_reference.csv",
+    "step5_v5_family_index.csv",
+    "step5_v5_economic_lookup.csv",
+    "step5_v5_validation_summary.csv",
+    "step5_v5_metadata.json"
+  ]
+}
